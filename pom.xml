@@ -16,8 +16,38 @@
 
 	<properties>
 		<java.version>11</java.version>
-	</properties>	
+	</properties>
+
+	 <repositories>
+        <repository>
+            <id>mvn-repo2</id>
+            <!-- https://raw.github.com/用户名/仓库名/分支名 -->
+			
+            <url>https://raw.github.com/liufarui/mvn-repo/master</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.github.liufarui</groupId>
+                <artifactId>demo-maven-github-repo</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </plugin>
+        </plugins>
+    </build>
+
+
 	<dependencies>
+		<dependency>
+            <groupId>com.github.liufarui</groupId>
+            <artifactId>demo-maven-github-repo</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
@@ -28,20 +58,9 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>		
-		<dependency>
-			<groupId>tw.com.carrefour</groupId>
-			<artifactId>utilities</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+		
 	</dependencies>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>tw.com.carrefour</groupId>
-				<artifactId>utilities</artifactId>	
-			</plugin>
-		</plugins>
-	</build>
+	
 	
 </project>
